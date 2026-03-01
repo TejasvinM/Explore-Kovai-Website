@@ -62,7 +62,8 @@
 
 
 .home_bg {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     position: relative;
     background: url("https://preview.redd.it/r-s-puram-v0-vuxbufrggnsc1.jpg?width=1080&crop=smart&auto=webp&s=40336b0b0fbace83f4498c752d07fcda3104cd08")
                 no-repeat center center/cover;
