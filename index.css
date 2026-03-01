@@ -656,3 +656,12 @@
         padding: 40px 10px;
     }
 }
+
+.home_bg {
+    min-height: 100vh !important;
+    height: auto !important;
+}
+
+.carousel-wrapper {
+    margin-top: 0 !important;
+}
