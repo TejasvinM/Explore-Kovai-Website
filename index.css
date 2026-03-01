@@ -62,30 +62,42 @@
 
 
 .home_bg {
-    min-height: 100vh;
-    height: auto;
+    min-height: 100vh;      /* fallback */
+    min-height: 100dvh;     /* better for modern mobile browsers */
     position: relative;
-    background: url("https://preview.redd.it/r-s-puram-v0-vuxbufrggnsc1.jpg?width=1080&crop=smart&auto=webp&s=40336b0b0fbace83f4498c752d07fcda3104cd08")
-                no-repeat center center/cover;
+    background: url("https://preview.redd.it/r-s-puram-v0-vuxbufrggnsc1.jpg?width=1080&crop=smart&auto=webp&s=40336b0b0fbace83f4498c752d07fcda3104cd08") 
+                no-repeat center center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: cover;
+    overflow: hidden;
 }
 
-
+/* Dark gradient overlay */
 .home_bg::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0,0,0,0.75),
-        rgba(0,0,0,0.35)
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.35)
     );
     z-index: 1;
 }
 
+/* Make sure your inner content stays above overlay */
+.home_bg > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Optional small mobile adjustment */
+@media (max-width: 768px) {
+    .home_bg {
+        background-position: center top;
+    }
+}
 .hero-container {
     position: relative;
     z-index: 2;  
@@ -119,6 +131,7 @@
 .carousel-header h1 {
     font-size: 50px;
     margin-bottom: 15px;
+    margin-top: 50px;
   color: #d4af37;
 }
 .carousel-header p {
