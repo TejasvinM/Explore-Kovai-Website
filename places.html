@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- FIX: was width=12008781, which breaks every phone and tablet -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Places to visit — Namma Kovai</title>
+<meta name="description" content="An interactive map of 16 places to visit across Coimbatore district: temples, hills, waterfalls, dams and family days out.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600&family=Noto+Serif+Tamil:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="places.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="navbar scrolled" id="navbar">
+  <a class="logo" href="index.html">Namma <span>கோவை</span></a>
+  <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu"><span class="bar"></span></button>
+  <nav aria-label="Primary">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="places.html">Places</a></li>
+      <li><a href="food.html" aria-current="page">Food</a></li>
+      <li><a href="index.html#Adventures">Adventures</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <section class="pl-hero" aria-labelledby="ph-title">
+    <div class="ph-slide on" style="--img:url(&quot;images/place-isha.jpg&quot;)"></div><div class="ph-slide" style="--img:url(&quot;images/place-marudhamalai.jpg&quot;)"></div><div class="ph-slide" style="--img:url(&quot;images/place-vellingiri.jpg&quot;)"></div><div class="ph-slide" style="--img:url(&quot;images/place-kovai-kutralam.jpg&quot;)"></div>
+    <div class="ph-slide" style="--img:url(&quot;images/wiki-valparai.jpg&quot;)"></div><div class="ph-slide" style="--img:url(&quot;images/wiki-monkey-falls.jpg&quot;)"></div>
+    <p class="ph-kicker">Presenting</p>
+    <h1 class="ph-title" id="ph-title" aria-label="Kovai uncovered"><span class="wd"><span style="--i:0">K</span><span style="--i:1">O</span><span style="--i:2">V</span><span style="--i:3">A</span><span style="--i:4">I</span></span> <span class="wd"><span style="--i:6">U</span><span style="--i:7">N</span><span style="--i:8">C</span><span style="--i:9">O</span><span style="--i:10">V</span><span style="--i:11">E</span><span style="--i:12">R</span><span style="--i:13">E</span><span style="--i:14">D</span></span></h1>
+    <p class="ph-sub">Temples, hills, waterfalls and family days out — sixteen places across Coimbatore district, on one map.</p>
+    <a class="ph-cta" href="#explore">Explore the map<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></i></a>
+    <div class="ph-meta"><span><b>16</b> places</span><span>Coimbatore district · Tamil Nadu</span><span><b>4</b> kinds of trip</span></div>
+  </section>
+
+  <section class="explore" id="explore" aria-labelledby="ex-title">
+    <div class="section-head"><div><div class="kicker">Places to visit</div><h2 id="ex-title">Find your way around Kovai</h2>
+      <p class="count">Tap a pin to see the place. Filter by the kind of trip you want.</p></div></div>
+    <div class="chips" role="group" aria-label="Filter places"><button type="button" class="chip" data-f="all" aria-pressed="true">All <span>16</span></button><button type="button" class="chip" data-f="temple" aria-pressed="false">Temples <span>5</span></button><button type="button" class="chip" data-f="hills" aria-pressed="false">Hills & wildlife <span>3</span></button><button type="button" class="chip" data-f="water" aria-pressed="false">Falls & dams <span>4</span></button><button type="button" class="chip" data-f="city" aria-pressed="false">City & family <span>4</span></button></div>
+    <div class="ex-grid">
+      <div>
+        <div class="map" id="map">
+          <div class="map-inner"><svg class="map-art" viewBox="0 0 550 1100" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="cityGlow"><stop offset="0" stop-color="#d4af37" stop-opacity=".35"/><stop offset="1" stop-color="#d4af37" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ghat" x1="0" x2="1"><stop offset="0" stop-color="#1f3a2c"/><stop offset=".62" stop-color="#1f3a2c" stop-opacity=".85"/><stop offset="1" stop-color="#13211b" stop-opacity="0"/></linearGradient>
+    <linearGradient id="ghatS" y1="1" y2="0" x1="0" x2="0"><stop offset="0" stop-color="#1f3a2c"/><stop offset="1" stop-color="#13211b" stop-opacity="0"/></linearGradient>
+    <linearGradient id="ghatN" y1="0" y2="1" x1="0" x2="0"><stop offset="0" stop-color="#1f3a2c"/><stop offset="1" stop-color="#13211b" stop-opacity="0"/></linearGradient>
+  </defs>
+  <!-- stylised hill country (not survey-accurate) -->
+  <path d="M-500 0H1050V60Q420 120 300 95T120 140-500 120Z" fill="url(#ghatN)"/>
+  <path d="M-500 120H-30Q40 170 0 230Q120 260 150 360T190 520 120 700 0 760Q-40 820-30 860H-500Z" fill="url(#ghat)"/>
+  <path d="M-500 1100V860H0Q120 800 260 860T450 830 550 880H1050V1100Z" fill="url(#ghatS)"/>
+  <g class="contours" fill="none" stroke="#d4af37" stroke-opacity=".12">
+    <path d="M-500 50H0Q150 90 290 70T550 30H1050"/><path d="M-500 90H0Q160 120 300 100T550 70H1050"/>
+    <path d="M0 300Q100 330 125 400T150 520 90 650 0 700"/><path d="M0 340Q70 370 90 420T110 520 60 620 0 650"/>
+    <path d="M-500 900H0Q140 850 270 900T550 920H1050"/><path d="M-500 950H0Q150 900 280 950T550 970H1050"/><path d="M-500 1010H0Q160 960 290 1000T550 1030H1050"/>
+  </g>
+  <g class="hill-labels" fill="#e8cf7c" fill-opacity=".45" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="20">
+    <text x="-40" y="40">Nilgiris</text>
+    <text x="-20" y="620" transform="rotate(-90 -20 620)">Western Ghats</text>
+    <text x="-40" y="1075">Anamalai Hills</text>
+  </g>
+  <g class="roads" fill="none" stroke="#f3ede1" stroke-opacity=".22" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round">
+    <polyline points="406,363 400,230 390,80"/><polyline points="406,363 430,460 450,580 460,720 440,830 425,900 390,960 420,1000 405,1053"/><polyline points="406,363 300,390 190,408"/>
+  </g>
+  <circle cx="406" cy="363" r="90" fill="url(#cityGlow)"/>
+  <line id="route" x1="406" y1="363" x2="406" y2="363" stroke="#d4af37" stroke-width="2"/>
+  <g class="towns" font-family="Manrope,system-ui,sans-serif" font-size="15" fill="#f3ede1" fill-opacity=".6" letter-spacing="2">
+    <circle cx="406" cy="363" r="5" fill="#f3ede1" fill-opacity=".55"/><text x="418" y="330" font-size="17" fill-opacity=".85">COIMBATORE</text><circle cx="390" cy="80" r="3.5" fill="#f3ede1" fill-opacity=".55"/><text x="402" y="85" >METTUPALAYAM</text><circle cx="460" cy="720" r="3.5" fill="#f3ede1" fill-opacity=".55"/><text x="472" y="725" >POLLACHI</text><circle cx="405" cy="1053" r="3.5" fill="#f3ede1" fill-opacity=".55"/><text x="417" y="1058" >VALPARAI</text>
+  </g>
+  <g class="compass" transform="translate(505 60)" fill="none" stroke="#e8cf7c" stroke-opacity=".5">
+    <circle r="18"/><path d="M0 -14L5 0 0 14 -5 0Z" fill="#e8cf7c" fill-opacity=".5"/>
+    <text y="-24" text-anchor="middle" font-size="12" fill="#e8cf7c" stroke="none" font-family="Manrope,sans-serif">N</text>
+  </g>
+</svg><button type="button" class="pin" data-i="0" data-cat="temple" style="left:34.55%;top:37.09%" aria-label="Isha sivan temple, Temples" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Isha sivan temple</span></button><button type="button" class="pin" data-i="1" data-cat="temple" style="left:55.09%;top:30.27%" aria-label="Maruthamalai Temple, Temples" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Maruthamalai Temple</span></button><button type="button" class="pin" data-i="2" data-cat="hills" style="left:27.27%;top:35.45%" aria-label="Vellaingiri Hills, Hills & wildlife" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Vellaingiri Hills</span></button><button type="button" class="pin" data-i="3" data-cat="water" style="left:25.45%;top:40.0%" aria-label="Kovai Kutralam, Falls & dams" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Kovai Kutralam</span></button><button type="button" class="pin" data-i="4" data-cat="city" style="left:76.36%;top:34.55%" aria-label="Nehru Stadium, City & family" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Nehru Stadium</span></button><button type="button" class="pin" data-i="5" data-cat="hills" style="left:72.73%;top:95.45%" aria-label="Valparai, Hills & wildlife" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Valparai</span></button><button type="button" class="pin" data-i="6" data-cat="temple" style="left:64.18%;top:37.64%" aria-label="Perur Patteeswarar Temple, Temples" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Perur Patteeswarar Temple</span></button><button type="button" class="pin" data-i="7" data-cat="water" style="left:72.36%;top:84.82%" aria-label="Monkey Falls, Falls & dams" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Monkey Falls</span></button><button type="button" class="pin" data-i="8" data-cat="water" style="left:77.82%;top:81.09%" aria-label="Aliyar Dam, Falls & dams" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Aliyar Dam</span></button><button type="button" class="pin" data-i="9" data-cat="hills" style="left:50.91%;top:85.45%" aria-label="Indira Gandhi Wildlife Sanctuary, Hills & wildlife" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Indira Gandhi Wildlife Sanctuary</span></button><button type="button" class="pin" data-i="10" data-cat="temple" style="left:78.18%;top:41.82%" aria-label="Eachanari Vinayagar Temple, Temples" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Eachanari Vinayagar Temple</span></button><button type="button" class="pin" data-i="11" data-cat="water" style="left:14.55%;top:38.18%" aria-label="Siruvani Dam, Falls & dams" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Siruvani Dam</span></button><button type="button" class="pin" data-i="12" data-cat="temple" style="left:69.09%;top:72.73%" aria-label="Masani Amman Temple, Temples" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Masani Amman Temple</span></button><button type="button" class="pin" data-i="13" data-cat="city" style="left:87.27%;top:31.82%" aria-label="GeDee Car Museum, City & family" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">GeDee Car Museum</span></button><button type="button" class="pin" data-i="14" data-cat="city" style="left:68.36%;top:32.36%" aria-label="TNAU Botanical Garden, City & family" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">TNAU Botanical Garden</span></button><button type="button" class="pin" data-i="15" data-cat="city" style="left:70.91%;top:6.36%" aria-label="Black Thunder, City & family" aria-pressed="false"><span class="pin-dot"></span><span class="pin-label">Black Thunder</span></button></div>
+          
+        </div>
+        <div class="legend" aria-hidden="true"><span><i style="background:#e8cf7c"></i>Temples</span><span><i style="background:#8fd19e"></i>Hills &amp; wildlife</span><span><i style="background:#8fc6d6"></i>Falls &amp; dams</span><span><i style="background:#f0a08a"></i>City &amp; family</span><span style="margin-left:auto">Approximate positions · not to scale</span></div>
+      </div>
+      <article class="panel" id="panel" aria-live="polite">
+        <div class="pn-media" id="pn-media"></div>
+        <div class="pn-body" id="pn-body"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pl-index" aria-labelledby="pi-title">
+    <h2 id="pi-title">All places by type</h2>
+    <div class="pl-groups"><div class="pl-group"><h3>Temples</h3><ul><li><button type="button" data-go="0"><span>01</span>Isha sivan temple<em>Isha Yoga Centre</em></button></li><li><button type="button" data-go="1"><span>02</span>Maruthamalai Temple<em>Marudhamalai</em></button></li><li><button type="button" data-go="6"><span>07</span>Perur Patteeswarar Temple<em>Perur</em></button></li><li><button type="button" data-go="10"><span>11</span>Eachanari Vinayagar Temple<em>Eachanari</em></button></li><li><button type="button" data-go="12"><span>13</span>Masani Amman Temple<em>Anaimalai</em></button></li></ul></div><div class="pl-group"><h3>Hills & wildlife</h3><ul><li><button type="button" data-go="2"><span>03</span>Vellaingiri Hills<em>Vellingiri</em></button></li><li><button type="button" data-go="5"><span>06</span>Valparai<em>Valparai</em></button></li><li><button type="button" data-go="9"><span>10</span>Indira Gandhi Wildlife Sanctuary<em>Pollachi</em></button></li></ul></div><div class="pl-group"><h3>Falls & dams</h3><ul><li><button type="button" data-go="3"><span>04</span>Kovai Kutralam<em>Siruvani Hills</em></button></li><li><button type="button" data-go="7"><span>08</span>Monkey Falls<em>Near Aliyar</em></button></li><li><button type="button" data-go="8"><span>09</span>Aliyar Dam<em>Near Pollachi</em></button></li><li><button type="button" data-go="11"><span>12</span>Siruvani Dam<em>Near Walayar</em></button></li></ul></div><div class="pl-group"><h3>City & family</h3><ul><li><button type="button" data-go="4"><span>05</span>Nehru Stadium<em>Coimbatore city</em></button></li><li><button type="button" data-go="13"><span>14</span>GeDee Car Museum<em>Avinashi Road</em></button></li><li><button type="button" data-go="14"><span>15</span>TNAU Botanical Garden<em>Coimbatore city</em></button></li><li><button type="button" data-go="15"><span>16</span>Black Thunder<em>Mettupalayam</em></button></li></ul></div></div>
+  </section>
+</main>
+<footer class="site-foot home-foot"><a href="index.html" style="color:var(--gold-soft)">&#8592; Back to home</a><details class="credits"><summary>Photo credits</summary><ul><li>Valparai: <a href="https://commons.wikimedia.org/wiki/File:Tea_Estates_in_Valparai.jpg" target="_blank" rel="noopener">Kkdi63, CC BY-SA 4.0</a>, via Wikimedia Commons</li><li>Perur: <a href="https://commons.wikimedia.org/wiki/File:PERUR_PATTEESHWARAR_TEMPLE.jpg" target="_blank" rel="noopener">Balajijagadesh, CC BY-SA 3.0</a>, via Wikimedia Commons</li><li>Monkey Falls: <a href="https://commons.wikimedia.org/wiki/File:IGWS%26NPUpper_AliyarMonkey_falls.jpg" target="_blank" rel="noopener">Marcus Sherman, CC BY-SA 2.0</a>, via Wikimedia Commons</li><li>Aliyar: <a href="https://commons.wikimedia.org/wiki/File:Aliyar-Dam-TopView.jpg" target="_blank" rel="noopener">K.Mohan Raj, CC BY-SA 3.0</a>, via Wikimedia Commons</li><li>Eachanari: <a href="https://commons.wikimedia.org/wiki/File:Panorama_view_of_Eachanari_Vinayakar_Temple_Coimbatore.jpg" target="_blank" rel="noopener">Durai.velumani, CC BY-SA 4.0</a>, via Wikimedia Commons</li></ul><p>Other photos are linked from their original publishers; they will be replaced with licensed or own photos before launch.</p></details></footer>
+
+<script src="places.js"></script>
+</body>
+</html>
