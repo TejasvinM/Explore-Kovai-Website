@@ -377,3 +377,7 @@ a{color:inherit}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* representative-image tag on photos that may not show the exact spot */
+.rep-tag{position:absolute;z-index:2;left:14px;top:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ivory);background:rgba(11,15,13,.72);padding:4px 9px;border-radius:999px}
+.adv-cta{margin-top:30px}
