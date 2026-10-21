@@ -381,3 +381,16 @@ a{color:inherit}
 /* representative-image tag on photos that may not show the exact spot */
 .rep-tag{position:absolute;z-index:2;left:14px;top:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ivory);background:rgba(11,15,13,.72);padding:4px 9px;border-radius:999px}
 .adv-cta{margin-top:30px}
+
+/* home place cards open that place on the Places map */
+.card-link{position:absolute;inset:0;z-index:2;border-radius:inherit}
+.card-link:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+.carousel-card .credit{z-index:3}
+.carousel-card .card-overlay{pointer-events:none}
+.map-cue{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:600;color:var(--gold-soft);
+  opacity:0;transform:translateY(6px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.carousel-card:hover .map-cue,.carousel-card:focus-within .map-cue{opacity:1;transform:none}
+@media (hover:none){.map-cue{opacity:1;transform:none}}
+
+.feat-link{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:10px;color:var(--gold-soft);font-weight:600;text-decoration:none}
+.feat-link:hover span{transform:translateX(3px)}.feat-link span{transition:transform .25s var(--ease)}
