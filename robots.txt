@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://namma-kovai.netlify.app/sitemap.xml
