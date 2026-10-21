@@ -33,7 +33,7 @@ var PLACES=[{"i": 0, "name": "Isha sivan temple", "cat": "temple", "catLabel": "
       +(p.rep?'<span class="rep-chip">Representative image</span>':'')+'<div class="pn-num">'+('0'+(i+1)).slice(-2)+'<small>/ '+PLACES.length+'</small></div>';
     body.innerHTML='<span class="tag">'+esc(p.catLabel)+'</span><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p>'
       +'<div class="pn-facts"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'+esc(p.loc)+'</span>'+(p.km?'<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M13 5l7 7-7 7"/></svg>About '+p.km+' km from the city centre <small style="color:var(--muted)">(straight line)</small></span>':'<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M13 5l7 7-7 7"/></svg>In the city</span>')+'</div>'
-      +(p.credit?'<p class="pn-credit">Photo: <a href="'+esc(p.creditUrl)+'" target="_blank" rel="noopener">'+esc(p.credit)+'</a>, via Wikimedia Commons</p>':'')+'<div class="pn-actions"><a class="btn btn-primary" href="'+esc(p.maps)+'" target="_blank" rel="noopener">Directions <span aria-hidden="true">&#8599;</span></a>'
+      +(p.credit?'<p class="pn-credit">Photo: <a href="'+esc(p.creditUrl)+'" target="_blank" rel="noopener">'+esc(p.credit)+'</a>, via Wikimedia Commons</p>':'')+'<div class="pn-actions"><a class="btn btn-primary" href="'+esc(p.maps)+'" target="_blank" rel="noopener">Directions <span aria-hidden="true">&#8599;</span></a><a class="btn btn-ghost" href="#guide-'+p.slug+'">Read more <span aria-hidden="true">&#8595;</span></a>'
       +'<div class="pn-step"><button type="button" data-s="-1" aria-label="Previous place">&#8592;</button><button type="button" data-s="1" aria-label="Next place">&#8594;</button></div></div>';
     panel.setAttribute('aria-label',p.name);
     if(!reduce){panel.classList.remove('swap');void panel.offsetWidth;panel.classList.add('swap');}
@@ -53,6 +53,7 @@ var PLACES=[{"i": 0, "name": "Isha sivan temple", "cat": "temple", "catLabel": "
     pins.forEach(function(b){var off=filter!=='all'&&b.dataset.cat!==filter; b.classList.toggle('dim',off); b.tabIndex=off?-1:0;});
     if(visible().indexOf(cur)<0) show(visible()[0]);
     setZoom(filter==='shop');
+    document.querySelectorAll('.g-group').forEach(function(gr){gr.hidden=(filter!=='all'&&gr.dataset.cat!==filter);});
   });});
   document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){
     var i=+b.dataset.go; if(filter!=='all'&&PLACES[i].cat!==filter) document.querySelector('.chip[data-f="all"]').click();

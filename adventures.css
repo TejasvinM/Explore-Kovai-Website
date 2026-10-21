@@ -92,3 +92,15 @@
   .stop:nth-of-type(even) .stop-facts dd{margin-left:0}
 }
 @media (prefers-reduced-motion:reduce){.ad-hero .bg,.mist{animation:none}.ridge{transform:none!important}}
+.stop-expect{margin-top:16px;padding:14px 16px;border-radius:12px;background:rgba(19,33,27,.7);border:1px solid var(--line)}
+.stop-expect span,.stop-tips span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.stop-expect p{font-size:14.5px;line-height:1.65;color:var(--ivory);opacity:.88;margin-top:6px}
+.stop-tips{margin-top:16px}
+.stop-tips ul{list-style:none;margin-top:6px;display:grid;gap:6px}
+.stop-tips li{font-size:14px;line-height:1.5;color:var(--muted);padding-left:18px;position:relative}
+.stop-tips li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:2px;background:var(--gold);opacity:.8}
+.stop:nth-of-type(even) .stop-tips li{padding-left:0;padding-right:18px}
+.stop:nth-of-type(even) .stop-tips li::before{left:auto;right:0}
+@media (max-width:860px){.stop:nth-of-type(even) .stop-tips li{padding-left:18px;padding-right:0}.stop:nth-of-type(even) .stop-tips li::before{left:0;right:auto}}
+.fx .stop.in .stop-text>*:nth-child(7){transition-delay:.46s}.fx .stop.in .stop-text>*:nth-child(8){transition-delay:.52s}
+
