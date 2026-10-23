@@ -1,0 +1,12 @@
+# Netlify builds this Next.js site with its built-in Next.js support (no plugin to install).
+# Set these in Netlify → Site configuration → Environment variables (never in this file):
+#   API_URL               https://<your-render-service>.onrender.com
+#   SITE_SERVER_KEY       the same secret as on Render
+#   NEXT_PUBLIC_SITE_URL  https://namma-kovai.netlify.app
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
