@@ -1,4 +1,4 @@
-# Netlify builds this Next.js site with its built-in Next.js support (no plugin to install).
+# Netlify builds this Next.js site with its built-in Next.js support (the plugin below).
 # Set these in Netlify → Site configuration → Environment variables (never in this file):
 #   API_URL               https://<your-render-service>.onrender.com
 #   SITE_SERVER_KEY       the same secret as on Render
@@ -6,6 +6,11 @@
 [build]
   command = "npm run build"
   publish = ".next"
+
+# Netlify's Next.js runtime (server functions, ISR, image handling). Listed explicitly because this
+# project was first set up as a plain HTML site, so Netlify didn't switch it on by itself.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [build.environment]
   NODE_VERSION = "22"
